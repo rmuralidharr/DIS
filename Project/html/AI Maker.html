@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	
+    <head>
+        <title>AI Video Generator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body >
+        
+		<div  class="cont">
+		<h1>AI Video Generator</h1>
+		<button id="record">Record</button>
+		<button id="stop">Stop</button>
+		<audio id="audio"></audio>
+		&plus;
+		<input type="file" id="myFile" name="filename">
+		<br>
+		<br>
+		<button type="submit">Generate AI Video</button>
+		</div>
+		<!-- <script>
+		  const recordButton = document.getElementById("record");
+		  const stopButton = document.getElementById("stop");
+		  const audioElement = document.getElementById("audio");
+		  let audioChunks = [];
+		
+		  recordButton.onclick = function() {
+			navigator.mediaDevices.getUserMedia({ audio: true })
+			  .then(function(stream) {
+				const mediaRecorder = new MediaRecorder(stream);
+				mediaRecorder.start();
+		
+				mediaRecorder.addEventListener("dataavailable", function(event) {
+				  audioChunks.push(event.data);
+				});
+		
+				mediaRecorder.addEventListener("stop", function() {
+				  const audioBlob = new Blob(audioChunks);
+				  audioChunks = [];
+				  const audioUrl = URL.createObjectURL(audioBlob);
+				  audioElement.src = audioUrl;
+				});
+		
+				stopButton.onclick = function() {
+				  mediaRecorder.stop();
+				}
+			  });
+		  }
+		</script>
+		
+		In this example, we have two buttons - one to start recording (record) and one to stop recording (stop) - and an audio element to play back the recorded audio. When the record button is clicked, we use t -->
+        </body>
+</html>
