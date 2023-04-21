@@ -8,6 +8,49 @@
 </head>
 
 <body>
+	<script>
+		const recordButton = document.getElementById('record');
+
+		recordButton.addEventListener('click', startRecording);
+
+		let mediaRecorder;
+		let recordedChunks = [];
+
+		function startRecording() {
+			navigator.mediaDevices.getUserMedia({ audio: true })
+				.then(function (stream) {
+					mediaRecorder = new MediaRecorder(stream);
+					mediaRecorder.addEventListener("dataavailable", function (event) {
+						recordedChunks.push(event.data);
+					});
+					mediaRecorder.start();
+					recordButton.textContent = "Stop Recording";
+					recordButton.removeEventListener('click', startRecording);
+					recordButton.addEventListener('click', stopRecording);
+				});
+		}
+
+		function stopRecording() {
+			mediaRecorder.stop();
+			recordButton.textContent = "Record";
+			recordButton.removeEventListener('click', stopRecording);
+			recordButton.addEventListener('click', startRecording);
+			saveRecording();
+		}
+
+		function saveRecording() {
+			const blob = new Blob(recordedChunks, { type: "audio/webm" });
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement('a');
+			document.body.appendChild(a);
+			a.style = 'display: none';
+			a.href = url;
+			a.download = 'recording.webm';
+			a.click();
+			URL.revokeObjectURL(url);
+			recordedChunks = [];
+		}
+	</script>
 	<!-- <script>
 		  const recordButton = document.getElementById("record");
 		  const stopButton = document.getElementById("stop");
@@ -42,7 +85,7 @@
 
 	<div class="cont">
 		<h1>AI Video Generator</h1>
-		<button id="record">Record</button>
+		<button id="record-button">Record</button>
 		<button id="stop">Stop</button>
 		<audio id="audio"></audio>
 		&plus;
