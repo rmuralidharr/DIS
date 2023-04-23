@@ -8,7 +8,8 @@
 </head>
 
 <body>
-	<!-- <script>
+	<!---->
+	 <script>
 		  const recordButton = document.getElementById("record");
 		  const stopButton = document.getElementById("stop");
 		  const audioElement = document.getElementById("audio");
@@ -38,7 +39,7 @@
 		  }
 		</script>
 		
-		<!-- In this example, we have two buttons - one to start recording (record) and one to stop recording (stop) - and an audio element to play back the recorded audio. When the record button is clicked, we use t -->
+		
 
 	<div class="cont">
 		<h1>AI Video Generator</h1>
@@ -82,12 +83,29 @@
 			}
 		</script>
 
-		<p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>
+		<p><strong>Tip:</strong> select multiple files using the Control or the Shift key </p>
 
 		<br>
-		<button type="submit">Generate AI Video</button>
+		<script>
+			function myFunction() {
+			  alert("Generating AI Video Process started");
+			}
+			</script>
+		<button type="submit" onclick="myFunction()">Generate AI Video</button>
 	</div>
+<div>
+<p>Things we need to generate AI generated video</p>
+<ul>
+	<li>Image</li>
+	<li>Audio file</li>
+</ul>
 
+<p>You can use any image you want or you can go to the this website and join. It will redirect you to their discord server. Once you join that, you can go to any channel and you provide a prompt with description the image that you want to generate with ‘#imagine’ before your description. It will generate some images based on the given description and you can download the image that you like.</p>
+
+<p>Next you need a audio file, here you can upload your own audio file or you can use elevenlabs voice AI generator which actually takes your text input and converts it into AI generated audio file. You can download it now.</p>
+
+<p>Next, we use DID website to generate our AI video you just need to upload the image and audio file and you just need to click on generate button which will generate your AI video.</p>
+</div>
 </body>
 
 </html>
