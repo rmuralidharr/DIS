@@ -1,6 +1,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="static/CSS/main.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -18,12 +19,12 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="html/home.html" target="iframe_a">Home</a></li>
-			<li><a href="html/AI Maker.html" target="iframe_a">AI Maker</a></li>
-			<li><a href="html/Upcoming.html" target="iframe_a">UpComing</a></li>
-			<li><a href="html/About.html" target="iframe_a">About</a></li>
-			<li><a href="html/Feedback.html" target="iframe_a">Contact</a></li>
-			<li><a href="html/graph.html" target="iframe_a">Graph Analysis</a></li>
+			<li><a href="/home" target="iframe_a">Home</a></li>
+			<li><a href="/AI_Maker" target="iframe_a">AI Maker</a></li>
+			<li><a href="/upcoming" target="iframe_a">UpComing</a></li>
+			<li><a href="/About" target="iframe_a">About</a></li>
+			<li><a href="/Contact" target="iframe_a">Contact</a></li>
+			<li><a href="/Graph" target="iframe_a">Graph Analysis</a></li>
 		</ul>
 	</nav>
 
@@ -32,19 +33,21 @@
 			<marquee width="100%" direction="right">
 				<h2>Open Source Adds</h2>
 			</marquee>
-			<img src="img/maxresdefault.jpg" alt="Cloudy Sky" class="side_image">
+			<img src="{{ url_for('static', filename='img/maxresdefault.jpg') }}" alt="Cloudy Sky">
 		</div>
 
 		<div class="divg div2">
 
-			<iframe class="iframe" src="html/home.html" name="iframe_a" frameBorder="0"></iframe>
+			<iframe class="iframe" src="/home" name="iframe_a" frameBorder="0"></iframe>
 
 		</div>
 		<div class="divg div3">
 			<marquee width="100%" direction="left">
 				<h2>Open Source Adds</h2>
 			</marquee>
-			<img src="img/maxresdefault.jpg" alt="Cloudy Sky">
+
+			<img src="{{ url_for('static', filename='img/maxresdefault.jpg') }}" alt="Cloudy Sky">
+
 		</div>
 		<!-- <button onclick="myFunction()">Click me</button> -->
 	</div>
