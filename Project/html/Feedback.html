@@ -8,70 +8,6 @@
 </head>
 
 <body>
-  <h1>Feedback Form</h1>
-  <form action="" method="post" onsubmit="validateFeedbackForm()">
-    <div style="display: flex;">
-      <div style="width:50%">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" >
-      </div>
-
-      <div style="width:50%">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" >
-      </div>
-    </div>
-    <div style="display: flex;padding-top: 10px;">
-      <div style="width:50%">
-        <label for="message" id="message">Message:</label>
-        <textarea id="message" name="message" ></textarea>
-      </div>
-      <div style="width:50%;align-items: center;display: flex;">
-        <input type="submit" value="Submit" >
-      </div>
-    </div>
-
-  </form>
-  </div>
-
-  <body>
-    <div class="contact-us">
-      <h1>Contact Us</h1>
-      <form action="" method="post">
-        <div style="display: flex;">
-          <div style="width:50%">
-            <label for="name1">Name:</label>
-            <input type="text" id="name1" name="name" >
-          </div>
-          <div style="width:50%">
-            <label for="email1">Email:</label>
-            <input type="email1" id="email1" name="email" >
-          </div>
-        </div>
-
-        <div style="display: flex;padding-top: 10px;">
-          <div style="width:50%;display: block; margin-top: 15px;">
-            <label for="subject">Subject:</label>
-            <input type="subject" id="subject" name="subject" >
-          </div>
-          <div style="width:50%">
-            <label for="message1">Message:</label>
-            <textarea id="message1" name="message" ></textarea>
-          </div>
-        </div>
-        <div style="display: flex;justify-content: center;padding-top: 10px;align-items: center;">
-          <input type="submit" value="Send Message" onclick="validateFeedbackForm1()">
-        </div>
-        
-      </form>
-      <div class="contact-info">
-        <h2>Contact Information</h2>
-        <p><strong>Address:</strong> University Of South Florida, Tampa, Florida, USA</p>
-        <p><strong>Phone:</strong> +1 (813) 452-7228</p>
-        <p><strong>Email:</strong> mk17@usf.edu</p>
-      </div>
-    </div>
-  </body>
   <script>
     function submitForm() {
         alert("Your details are submitted ");
@@ -135,4 +71,67 @@
       
     }
   </script>
+  <h1>Feedback Form</h1>
+  <form action="{{url_for('Contact') }}"  onsubmit="validateFeedbackForm()">
+    <div style="display: flex;">
+      <div style="width:50%">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" >
+      </div>
+
+      <div style="width:50%">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+      </div>
+    </div>
+    <div style="display: flex;padding-top: 10px;">
+      <div style="width:50%">
+        <label for="message" id="message">Message:</label>
+        <textarea id="message" name="message" ></textarea>
+      </div>
+      <div style="width:50%;align-items: center;display: flex;">
+        <input type="submit" value="Submit" >
+      </div>
+    </div>
+
+  </form>
+  </div>
+    <div class="contact-us">
+      <h1>Contact Us</h1>
+      <form action="{{url_for('Contact') }}" onclick="validateFeedbackForm1()">
+        <div style="display: flex;">
+          <div style="width:50%">
+            <label for="name1">Name:</label>
+            <input type="text" id="name1" name="name" >
+          </div>
+          <div style="width:50%">
+            <label for="email1">Email:</label>
+            <input type="email1" id="email1" name="email" >
+          </div>
+        </div>
+
+        <div style="display: flex;padding-top: 10px;">
+          <div style="width:50%;display: block; margin-top: 15px;">
+            <label for="subject">Subject:</label>
+            <input type="subject" id="subject" name="subject" >
+          </div>
+          <div style="width:50%">
+            <label for="message1">Message:</label>
+            <textarea id="message1" name="message" ></textarea>
+          </div>
+        </div>
+        <div style="display: flex;justify-content: center;padding-top: 10px;align-items: center;">
+          <input type="submit" value="Send Message" >
+        </div>
+        
+      </form>
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Address:</strong> University Of South Florida, Tampa, Florida, USA</p>
+        <p><strong>Phone:</strong> +1 (813) 452-7228</p>
+        <p><strong>Email:</strong> mk17@usf.edu</p>
+      </div>
+    </div>
+  </body>
+  
 </html>
